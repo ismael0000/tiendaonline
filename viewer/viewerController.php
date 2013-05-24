@@ -4,21 +4,6 @@
 //include("../model/cartDTO.php");
 
 	
-		$dir = opendir("../model");
-		while(($file = readdir($dir)) !== false) {
-			if($file != "." && $file != "..")
-				include_once("../model/$file");
-			}
-		closedir($dir);
-
-	
-session_start(); 
-// iniciamos el array $_SESSION['carts'] donde vamos a guardar los productos en el carrito 
-if(!isset($_SESSION['carts']))
-$_SESSION['carts']=null;
-	include_once("../sql/config.php");
-	$page=$_GET['page'];
-	$carpeta= '../controller';
 	$directorio=opendir($carpeta); 
 
 //buscamos dentro de la carpeta controller si existe una pagina que se llame 
@@ -174,17 +159,7 @@ while ($archivo = readdir($directorio)){
         <div class="main_wrapper">
              <!-- importante el controlador que cambia el contenido de las paginas -->     
               </div>
-                <div class="main_right">
-				<?php
-				if(isset($_POST['nd']))	$nd = $_POST['nd'];
-				if(isset($_GET['page1']))	$page1 = $_GET['page1'];
-				if(isset($_GET['cat'])) $cat = $_GET['cat'];
-
-					include_once("../viewer/$page.php");
-				?>
-                
-				<?php 
-					if(isset($list_page))
+           
 					{
 						echo("<div align='right'>{$list_page}</div><br/>");
 					}
