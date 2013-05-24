@@ -86,8 +86,8 @@ while ($archivo = readdir($directorio)){
 
 <?php
 
-           	if(isset($_SESSION['logged'])){
-				if($_SESSION['logged']== true){
+                         if(isset($_SESSION['logged'])){
+		                       if($_SESSION['logged']== true){
 
 			//si esta logeado que muestre opción logout
 			 echo("
